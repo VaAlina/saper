@@ -1,3 +1,104 @@
+5/03/2014 at 14:51
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+
+<style>
+body{
+background-image: url(googlemaps.jpg);
+}
+.bomb{
+//background-color: yellow;
+}
+h1{
+text-align: center;
+}
+table{
+margin-left: 40%;
+width:300px; 
+height: 300px;
+}
+table, td{
+border: 1px solid;
+}
+input{
+margin-left: 40%;
+}
+</style>
+
+<h1>Сапёр</h1>
+<table>
+  <tr>
+    <td id="1"></td>
+    <td id="2"></td>		
+    <td id="3"></td>
+    <td id="4"></td>
+    <td id="5"></td>		
+    <td></td>
+  </tr>
+  <tr>
+    <td id="6"></td>
+    <td id="7"></td>		
+    <td id="8"></td>
+    <td id="9"></td>
+    <td id="10"></td>		
+    <td id="11"></td>
+  </tr>
+  <tr>
+    <td id="12"></td>
+    <td id="13"></td>		
+    <td id="14"></td>
+    <td id="15"></td>
+    <td id="16"></td>		
+    <td id="17"></td>
+  </tr>
+  <tr>
+    <td id="19"></td>
+    <td id="20"></td>		
+    <td id="21"></td>
+    <td id="22"></td>
+    <td id="23"></td>		
+    <td id="24"></td>
+  </tr>
+</table>
+
+<input type="button" value="start new game" onclick ="location.reload();">
+
+
+
+
+
+<script>
+$(document).ready(function(){
+
+var dangerItem1 = "#" +Math.round(Math.random()*24);
+var dangerItem2 = "#" +Math.round(Math.random()*24);
+var dangerItem3 = "#" +Math.round(Math.random()*24);
+var dangerItem4 = "#" +Math.round(Math.random()*24);
+
+
+
+/*if(dangerItem1==dangerItem2||dangerItem1==dangerItem3||dangerItem1==dangerItem4||dangerItem2==dangerItem3||dangerItem2==dangerItem4||dangerItem3==dangerItem4){
+run();
+}*/
+$(dangerItem1+" ," +dangerItem2+" ," +dangerItem3+" ," +dangerItem4).addClass("bomb");
+
+$(".bomb").click(function(){
+	$(".bomb").css("background-color","yellow");
+	alert("Try again!");
+});
+
+});
+</script>
+</body>
+</html>
+
+
+
 5/03/2014 at 00:50
 <!DOCTYPE html>
 <html>
