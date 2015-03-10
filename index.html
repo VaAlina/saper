@@ -1,3 +1,126 @@
+10/03/2014 at 22:29
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+<style>
+body{
+background-image: url(googlemaps.jpg);
+}
+h1{
+text-align: center;
+}
+table{
+margin-left: 40%;
+width:300px;
+height: 300px;
+}
+table, td{
+border: 1px solid;
+}
+input{
+margin-left: 40%;
+}
+span{
+font-size: 100%;
+}
+.bomb{
+}
+.nextToBomb{
+background-color: green;
+}
+</style>
+<h1>Sapёr</h1>
+<table>
+<tr>
+<td id="1"></td>
+<td id="2"></td>
+<td id="3"></td>
+<td id="4"></td>
+<td id="5"></td>
+<td></td>
+</tr>
+<tr>
+<td id="6"></td>
+<td id="7"></td>
+<td id="8"></td>
+<td id="9"></td>
+<td id="10"></td>
+<td id="11"></td>
+</tr>
+<tr>
+<td id="12"></td>
+<td id="13"></td>
+<td id="14"></td>
+<td id="15"></td>
+<td id="16"></td>
+<td id="17"></td>
+</tr>
+<tr>
+<td id="19"></td>
+<td id="20"></td>
+<td id="21"></td>
+<td id="22"></td>
+<td id="23"></td>
+<td id="24"></td>
+</tr>
+<tr>
+<td id="25"></td>
+<td id="26"></td>
+<td id="27"></td>
+<td id="28"></td>
+<td id="29"></td>
+<td id="30"></td>
+</tr>
+<tr>
+<td id="31"></td>
+<td id="32"></td>
+<td id="33"></td>
+<td id="34"></td>
+<td id="35"></td>
+<td id="36"></td>
+</tr>
+</table>
+<input type="button" value="start new game" onclick ="location.reload();">
+<span id="result"></span>
+<script>
+$(document).ready(function(){
+var correctCounter = 0;
+var danger = [];
+var dangerItem = [];
+
+for(var j =0; j < 4; j++){
+    danger.push(Math.round(1+Math.random()*36));
+    dangerItem.push("#" + danger[j]);
+
+    $(dangerItem[j]).addClass("bomb");
+	$("#" + (danger[j]+1)+" ," +"#" + (danger[j]-1)+" ," +"#" + (danger[j]+6)+" ," +"#" + (danger[j]-6)).addClass("nextToBomb");
+	$("#" + (danger[j]+5)+" ," +"#" + (danger[j]-5)+" ," +"#" + (danger[j]+7)+" ," +"#" + (danger[j]-7)).addClass("nextToBomb");
+}
+
+$(".bomb").click(function(){
+$(".bomb").css("background-color","yellow");
+document.getElementById("result").innerHTML="Try again!";
+$("td").not(".bomb").css("background-color","blue");
+});
+$("td").not(".bomb").click(function(){
+correctCounter++;
+$(this).css("background-color","blue");
+if(correctCounter === 20){alert("You win!");}
+document.getElementById("result").innerHTML="Go on!";
+});
+});
+</script>
+</body>
+</html>
+
+
+
+
 8/03/2014 at 23:18
 
 <!DOCTYPE html>
