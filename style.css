@@ -1,0 +1,42 @@
+body{
+    background-color: #f5f5f5;
+	font-size: 100%;
+	text-align: center;
+}
+h1{
+    text-align: center;
+	font-size: 200%;
+}
+table{
+    margin-left: 37%;
+    width:300px;
+    height: 300px;
+}
+table, td{
+    border: 1px solid;
+}
+input{
+    padding: 0.6%;
+	margin: 0.3%;
+    background-color: #254381;
+    color: #f5f5f5;
+}
+
+.bomb{
+}
+.nextToBomb{
+    background-color: #699F5F;
+}
+.yellow{
+    color: #C6C650;
+}
+.blue{
+    color: #254381;
+}
+.green{
+    color: #699F5F;
+}
+
+#result{
+    font-size: 150%;
+}
